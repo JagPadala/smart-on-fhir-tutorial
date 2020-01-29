@@ -39,10 +39,15 @@
 
           var fname = '';
           var lname = '';
+          var mrn = '';
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family;
+          }
+
+          if (typeof patient.identifier[0] !== 'undefined') {
+            mrn = patient.identifier[0].type.text +":"+patient.identifier[0].value;
           }
 
           // Observations
