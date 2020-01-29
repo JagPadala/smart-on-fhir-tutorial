@@ -25,14 +25,25 @@
         //   }
         // });
 
-
+        var obv = smart.patient.api.fetchAll({
+          type: 'Observation',
+          query: {
+            code: {
+              $or: ['26478-81', '2345-71']
+            }
+          }
+        });
 
         console.log('patient:');
         console.log(patient)
 
-        $.when(pt).fail(onError);
+        $.when(pt, obv).fail(onError);
 
-        $.when(pt).done(function(patient) {
+        $.when(pt, obv).done(function(patient, obv) {
+          var byCodes = smart.byCodes(obv, 'code');
+          console.log("byCodes:");
+          console.log(byCodes('26478-81'));
+          console.log(byCodes('2345-71'));
 
           var gender = patient.gender;
 
@@ -45,6 +56,7 @@
           }
 
           // Observations
+          lymph = byCodes('26478-81');
           // Cerner SoF Tutorial Observations
           // var height = byCodes('8302-2');
           // var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
