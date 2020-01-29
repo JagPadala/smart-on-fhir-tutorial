@@ -27,12 +27,13 @@
 
 
 
-        console.log('patient:');
-        console.log(patient)
+
 
         $.when(pt).fail(onError);
 
         $.when(pt).done(function(patient) {
+          console.log('patient:');
+          console.log(patient);
 
           var gender = patient.gender;
 
