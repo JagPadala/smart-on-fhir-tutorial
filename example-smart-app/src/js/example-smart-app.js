@@ -10,7 +10,7 @@
     function onReady(smart)  {
       console.log("After AUTH 123");
       if (smart.hasOwnProperty('patient')) {
-        console.log("Getting patient 123");
+        console.log("Getting patient 1234");
         var patient = smart.patient;
         var pt = patient.read();
 
@@ -34,6 +34,7 @@
         $.when(pt).done(function(patient) {
           console.log('patient:');
           console.log(patient);
+          console.log(patient.identifier);
 
           var gender = patient.gender;
 
