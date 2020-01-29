@@ -8,9 +8,9 @@
     }
 
     function onReady(smart)  {
-      console.log("After AUTH");
+      console.log("After AUTH 123");
       if (smart.hasOwnProperty('patient')) {
-        console.log("Getting patient");
+        console.log("Getting patient 123");
         var patient = smart.patient;
         var pt = patient.read();
 
