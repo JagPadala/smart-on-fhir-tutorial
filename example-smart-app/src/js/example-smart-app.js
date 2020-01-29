@@ -27,7 +27,7 @@
           type: 'Observation',
           query: {
             code: {
-              $or: ['http://loinc.org|26478-8', 'http://loinc.org|2345-7']
+              $or: ['http://loinc.org|26478-81', 'http://loinc.org|2345-71']
             }
           }
         });
@@ -40,8 +40,8 @@
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           console.log("byCodes:");
-          console.log(byCodes('26478-8'));
-          console.log(byCodes('2345-7'));
+          console.log(byCodes('26478-81'));
+          console.log(byCodes('2345-71'));
 
           var gender = patient.gender;
 
@@ -54,7 +54,7 @@
           }
 
           // Observations
-          lymph = byCodes('26478-8');
+          lymph = byCodes('26478-81');
           // Cerner SoF Tutorial Observations
           // var height = byCodes('8302-2');
           // var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
